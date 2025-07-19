@@ -193,11 +193,11 @@
     <p>We truly appreciate your trust in our product. Your support helps us continue developing powerful tools for the Roblox community.</p>
     
     <div class="btn-group">
-      <a href="#" class="btn btn-secondary">Join Our Discord</a>
+      <a href="https://discord.gg/cTsJUmewDS" target="_blank" class="btn btn-secondary">Join Our Discord</a>
     </div>
     
     <footer>
-      © 2025 YB3 Executor | All Rights Reserved
+      © 2023 YB3 Executor | All Rights Reserved
     </footer>
   </div>
 
@@ -233,11 +233,6 @@
     // Add click sound to buttons
     document.querySelectorAll('.btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const audio = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...');
-        audio.volume = 0.3;
-        audio.play().catch(e => console.log('Audio play failed:', e));
-        
         // More confetti when clicking buttons
         shootConfetti();
       });
