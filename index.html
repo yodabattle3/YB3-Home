@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | YB3 Executor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thanks | YB3 Executor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #76b5ff;
@@ -13,228 +13,87 @@
       --darker: #020617;
       --light: #e2e8f0;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: radial-gradient(circle at top, var(--dark), var(--darker));
       font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, var(--dark), var(--darker));
       color: white;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow-x: hidden;
-      perspective: 1000px;
-    }
-    
-    .confetti {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    
-    .container {
-      position: relative;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 3rem;
-      max-width: 600px;
-      width: 90%;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transform-style: preserve-3d;
-      transition: transform 0.5s;
+      padding: 1rem;
     }
-    
+    .box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      max-width: 360px;
+      width: 100%;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+      margin: 0.5rem 0;
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
-      text-shadow: 0 0 15px rgba(118, 181, 255, 0.3);
     }
-    
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+      font-size: 0.85rem;
       color: var(--light);
+      margin: 0.5rem 0 1rem;
     }
-    
-    .icon-wrapper {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2rem;
-      position: relative;
-    }
-    
-    .icon-circle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 3px solid var(--primary);
-      animation: pulse 3s infinite ease-in-out;
-    }
-    
-    .icon-circle:nth-child(2) {
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      border-color: var(--secondary);
-      animation-delay: 0.5s;
-    }
-    
-    .checkmark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4rem;
+    .icon {
+      font-size: 2rem;
       color: var(--primary);
     }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-    
     .btn {
       display: inline-block;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0.5rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      background: var(--primary);
       border: none;
+      color: white;
+      border-radius: 20px;
       cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(118, 181, 255, 0.3);
+      text-decoration: none;
+      transition: 0.2s;
     }
-    
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(118, 181, 255, 0.4);
+      background: var(--secondary);
     }
-    
-    .btn:active {
-      transform: translateY(1px);
-    }
-    
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.5s;
-    }
-    
-    .btn:hover::before {
-      left: 100%;
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-    
     footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-    
-    @media (max-width: 600px) {
-      .container {
-        padding: 2rem 1.5rem;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.5);
     }
   </style>
 </head>
 <body>
-  <div class="confetti" id="confetti"></div>
-  
-  <div class="container" id="container">
-    <div class="icon-wrapper">
-      <div class="icon-circle"></div>
-      <div class="icon-circle"></div>
-      <div class="checkmark">✓</div>
-    </div>
-    
-    <h1>Thank You for Using YB3 Executor!</h1>
-    
-    <p>We truly appreciate your trust in our product. Your support helps us continue developing powerful tools for the Roblox community.</p>
-    
-    <div class="btn-group">
-      <a href="https://discord.gg/cTsJUmewDS" target="_blank" class="btn btn-secondary">Join Our Discord</a>
-    </div>
-    
-    <footer>
-      © 2025 YB3 Executor | All Rights Reserved
-    </footer>
+  <div class="box">
+    <div class="icon">✓</div>
+    <h1>Thanks for Using YB3 Executor</h1>
+    <p>Your support means everything to us.</p>
+    <button class="btn" id="copyBtn">Join Discord</button>
+    <footer>© 2025 YB3 Executor</footer>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
-    // Confetti effect on load
-    function shootConfetti() {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#76b5ff', '#9c88ff', '#ffffff']
-      });
-    }
-    
-    // Shoot confetti after slight delay
-    setTimeout(shootConfetti, 300);
-    
-    // 3D tilt effect
-    const container = document.getElementById('container');
-    
-    document.addEventListener('mousemove', (e) => {
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-      container.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
-    
-    // Reset position when mouse leaves
-    document.addEventListener('mouseleave', () => {
-      container.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-    
-    // Add click sound to buttons
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        // More confetti when clicking buttons
-        shootConfetti();
+    const btn = document.getElementById('copyBtn');
+    const discordURL = 'https://discord.gg/cTsJUmewDS';
+
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(discordURL).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
       });
     });
   </script>
